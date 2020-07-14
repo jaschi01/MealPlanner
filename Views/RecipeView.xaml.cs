@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace MealPlanner.Views
 {
     /// <summary>
-    /// Interaction logic for AddIngredient.xaml
+    /// Interaction logic for RecipeViewModel.xaml
     /// </summary>
-    public partial class AddIngredient : Window
+    public partial class RecipeViewModel : Window
     {
-        public AddIngredient()
+        public RecipeViewModel()
         {
             InitializeComponent();
         }
