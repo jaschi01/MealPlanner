@@ -8,7 +8,8 @@
         Title="MainWindow" 
         >
     <Grid>
-        <ComboBox ItemsSource="{Binding cbList}" Width="100" Height="30"/>
+        <ComboBox ItemsSource="{Binding RecipeList}" SelectedItem="{Binding SelectedRecipe}" Width="100" Height="30"/>
+        <ListBox ItemsSource="{Binding IngredientList}" />
 
     </Grid>
 </Window>
