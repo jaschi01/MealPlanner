@@ -11,6 +11,7 @@ namespace MealPlanner.Models
         public string Name { get; set; }
         public override string ToString()
         {
+            // Made a change
             return Name;
         }
     }
