@@ -4,14 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MealPlanner.Models
+namespace MealPlanner.Database
 {
-    class IngredientModel
+    public class Ingredient
     {
         public string Name { get; set; }
-        public override string ToString()
-        {            
-            return Name;
-        }
     }
 }

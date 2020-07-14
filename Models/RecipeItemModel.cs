@@ -10,7 +10,11 @@ namespace MealPlanner.Models
     {        
         public IngredientModel Ingredient { get; set; }
         public int NumberOf { get; set; }
-        
+        public override string ToString()
+        {
+            return NumberOf.ToString() + " - " + Ingredient.ToString();
+        }
+
     }
     
 }
