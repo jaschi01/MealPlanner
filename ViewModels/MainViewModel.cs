@@ -1,5 +1,4 @@
 ﻿using LiteDB;
-using MealPlanner.Database;
 using MealPlanner.Models;
 using System;
 using System.Collections.Generic;
@@ -10,24 +9,12 @@ using System.Threading.Tasks;
 
 namespace MealPlanner
 {
-    class ViewModel : ViewModelBase
+    class MainViewModel : ViewModelBase
     {
         RecipeModel _selectedRecipe;
-        public ViewModel()
+        public MainViewModel()
         {
-            DBList = new ObservableCollection<IngredientModel>();
-            using (var db = new LiteDatabase(@"D:\MyData.db"))
-            {
-                var col = db.GetCollection<IngredientModel>("ingredient");
-                var ingredient = new IngredientModel();
-                ingredient.Name = "Peppers";
-                col.Insert(ingredient);
-                var ingredient2 = new IngredientModel();
-                ingredient2.Name = "Red Peppers";
-                col.Insert(ingredient2);
-
-                DBList = new ObservableCollection<IngredientModel>(col.Query().ToList());
-            }
+            DBList = new ObservableCollection<IngredientModel>(IngredientModel.GetAll());
             RecipeList = new ObservableCollection<RecipeModel>();
             RecipeModel recipe = new RecipeModel { Name = "Kababs" };            
             recipe.Ingredients.Add(new RecipeItemModel { Ingredient = new IngredientModel { Name = "Onions" }, NumberOf = 3 });

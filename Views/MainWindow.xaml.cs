@@ -23,7 +23,7 @@ namespace MealPlanner
         public MainWindow()
         {
             InitializeComponent();
-            ViewModel vm = new ViewModel();            
+            MainViewModel vm = new MainViewModel();            
             DataContext = vm;
         }
     }
